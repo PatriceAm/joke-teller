@@ -1,8 +1,10 @@
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
+const text = document.getElementById('text');
 
 function toggleButton(){
     button.disabled=!button.disabled;
+    text.style.display = 'none';
 }
 
 function tellMe(joke) {
@@ -31,6 +33,8 @@ async function getJokes () {
        }
        tellMe(joke);
        toggleButton();
+       text.textContent = joke;
+       text.style.display = 'flex'; 
     } catch (error) {
         console.log('whoops', error);
     }

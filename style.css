@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0;
-  background: #45badd;
+  overflow: hidden;
 }
 
 .container {
@@ -16,10 +16,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('./robot.gif');
-  background-size: contain;
-  background-position: left center;
-  background-repeat: no-repeat;
+  background: url('https://media.giphy.com/media/kHTzXTDCihfTOwVlqQ/source.gif') center center/cover;
 }
 
 button {
@@ -33,7 +30,7 @@ button {
   background: #ff3482;
   border: none;
   border-radius: 5px;
-  box-shadow: 2px 2px 20px 10px rgba(0,0,0,0.2);
+  box-shadow: inset 5px 25px 5px -20px rgba(255,255,255,0.8); 
 }
 
 button:hover {
@@ -49,13 +46,37 @@ button:disabled {
   filter: brightness(30%);
 }
 
-@media screen and (max-width: 1000px) {
-  .container {
-    background-size: cover;
-    background-position: center center;
-  }
+.text {
+  display: none;
+  max-width: 60vw;
+  background-color: whitesmoke;
+  opacity: 0.9;
+  color: dodgerblue;
+  font-size: 2rem;
+  padding: 20px 20px;
+  border-radius: 5px;
+  margin-top: 10%;
+  word-break: normal;
+  box-shadow: 0 5px 10px 10px rgba(0,0,0,0.5);
 }
 
-button {
-  box-shadow: 5px 5px 30px 20px rgba(0,0,0,0.5) ;
+.text-hide {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: left;
+  }
+   button {
+        box-shadow: 5px 5px 30px 20px rgba(0,0,0,0.5) ;
+  }
+  .text {
+    width: 80vw;
+    text-align: center;
+  }
 }
